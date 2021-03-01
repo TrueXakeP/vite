@@ -301,7 +301,7 @@ function viteLegacyPlugin(options = {}) {
       // 2. inject Safari 10 nomodule fix
       tags.push({
         tag: 'script',
-        attrs: { nomodule: true },
+        attrs: { nomodule: false },
         children: safari10NoModuleFix,
         injectTo: 'body'
       })
@@ -314,7 +314,7 @@ function viteLegacyPlugin(options = {}) {
         tags.push({
           tag: 'script',
           attrs: {
-            nomodule: true,
+            nomodule: false,
             src: `${config.base}${legacyPolyfillFilename}`
           },
           injectTo: 'body'
@@ -333,7 +333,7 @@ function viteLegacyPlugin(options = {}) {
         tags.push({
           tag: 'script',
           attrs: {
-            nomodule: true,
+            nomodule: false,
             // we set the entry path on the element as an attribute so that the
             // script content will stay consistent - which allows using a constant
             // hash value for CSP.
