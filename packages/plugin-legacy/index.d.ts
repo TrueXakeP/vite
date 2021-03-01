@@ -4,7 +4,7 @@ export interface Options {
   /**
    * default: 'defaults'
    */
-  targets?: string | string[] | { [key: string]: string }
+  targets?: string | string[] | { [key: string]: string | string[] | boolean }
   /**
    * default: false
    */
